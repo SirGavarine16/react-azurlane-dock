@@ -1,4 +1,5 @@
-import { FC, useMemo } from 'react';
+import { FC, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -13,8 +14,8 @@ interface Props {
 
 const ShipgirlCard: FC<Props> = ({ data }) => {
     const { name, thumbnail, rarity } = data;
-
-    const loading = false;
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
     const bg = useMemo(() => {
         if (rarity === 'Ultra Rare' || rarity === 'Decisive') {
@@ -33,7 +34,12 @@ const ShipgirlCard: FC<Props> = ({ data }) => {
     }, [rarity]);
 
     const handleCardClick = () => {
-        //start loading and go to page
+        setLoading(true);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        navigate(`/shipgirl/${data.name}`);
     }
 
     return (
