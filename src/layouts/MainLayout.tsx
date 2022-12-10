@@ -11,7 +11,7 @@ const MainLayout: FC<Props> = () => {
     return (
         <>
             <NavigationBar />
-            <Box paddingX='2rem' paddingY='1.5rem' marginTop='3rem' marginBottom='1.5rem'>
+            <Box paddingX='2rem' paddingY='1.5rem' marginTop='3rem'>
                 <Outlet />
                 <Divider />
             </Box>

@@ -16,3 +16,76 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.bg-rarity-normal {
+  background-color: #ccc;
+}
+
+.bg-rarity-rare {
+  background-color: #9fe8ff;
+}
+
+.bg-rarity-elite {
+  background-color: #c4adff;
+}
+
+.bg-rarity-super-rare {
+  background-color: #ee9;
+}
+
+.bg-rarity-ultra-rare {
+  background: linear-gradient(120deg, #8ef 10%, #cfc, #fcf 90%);
+}
+
+.shipgirl-card {
+  border-radius: 5px;
+}
+
+.shipgirl-card-img {
+  width: 90%;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.shipgirl-card-container {
+  cursor: pointer;
+  transition-property: transform !important;
+  transition-duration: 300ms !important;
+}
+
+.shipgirl-card-container:hover {
+  transform: scale(1.05);
+}
+
+.each-slide>div {
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 40rem;
+}
+
+/* width */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+/* Track */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 8px;
+}

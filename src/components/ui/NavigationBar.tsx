@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AppBar, Grid, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -30,7 +30,7 @@ const NavigationBar: FC<Props> = () => {
                         paddingX='1rem'
                     >
                         <Grid item>
-                            <Link to='/'>
+                            <a href='/'>
                                 <Grid container alignItems='center'>
                                     <Grid item sx={{ width: '3rem' }}>
                                         <picture>
@@ -52,7 +52,7 @@ const NavigationBar: FC<Props> = () => {
                                         </Typography>
                                     </Grid>
                                 </Grid>
-                            </Link>
+                            </a>
                         </Grid>
                         <Grid item>
                             <IconButton size='large' onClick={toggleTheme}>
