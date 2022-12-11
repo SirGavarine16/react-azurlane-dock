@@ -1,5 +1,9 @@
 import { FC } from 'react';
-import { Box, Divider, Grid, Pagination, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
+import Pagination from '@mui/material/Pagination';
+import Typography from '@mui/material/Typography';
 
 import { useFavoriteShipgirlsLogic } from '../hooks';
 import { EmptyContent, LoadingOverlay, ScrollTop, ShipgirlCard } from '../components';

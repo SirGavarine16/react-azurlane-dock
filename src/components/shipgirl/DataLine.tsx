@@ -1,5 +1,7 @@
-import { Box, Skeleton, Typography } from '@mui/material';
 import { FC } from 'react';
+import Box from '@mui/material/Box';
+import Skeleton from '@mui/material/Skeleton';
+import Typography from '@mui/material/Typography';
 
 interface Props {
     title: string;

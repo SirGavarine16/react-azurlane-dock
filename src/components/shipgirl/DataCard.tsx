@@ -1,9 +1,16 @@
-import { Box, Card, CardContent, Divider, Skeleton, Typography } from '@mui/material';
 import { FC } from 'react';
-import { ShipgirlPageData } from '../../constants';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Divider from '@mui/material/Divider';
+import Skeleton from '@mui/material/Skeleton';
+import Typography from '@mui/material/Typography';
+
+
 import DataLine from './DataLine';
-import ObtainedFromData from './ObtainedFromData';
 import SkillList from './SkillList';
+import ObtainedFromData from './ObtainedFromData';
+import { ShipgirlPageData } from '../../constants';
 
 interface Props {
     data?: ShipgirlPageData;

@@ -1,6 +1,11 @@
 import { FC, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppBar, Grid, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';

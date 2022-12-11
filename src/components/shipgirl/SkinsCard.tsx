@@ -1,5 +1,13 @@
 import { FC, useState } from 'react';
-import { Box, Button, ButtonGroup, Card, CircularProgress, Divider, Grid, Skeleton, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Card from '@mui/material/Card';
+import CircularProgress from '@mui/material/CircularProgress';
+import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
+import Skeleton from '@mui/material/Skeleton';
+import Typography from '@mui/material/Typography';
 
 import { ShipgirlPageData } from '../../constants';
 

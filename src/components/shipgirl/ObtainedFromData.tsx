@@ -1,5 +1,6 @@
 import { FC, useMemo } from 'react';
-import { Box, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 import DataLine from './DataLine';
 import { ShipgirlPageData } from '../../constants';

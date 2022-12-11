@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Box, Divider } from '@mui/material';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 
 import { FooterBar, NavigationBar } from '../components';
 

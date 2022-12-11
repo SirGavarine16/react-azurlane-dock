@@ -1,6 +1,7 @@
-import { Box, Typography } from '@mui/material';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 interface Props {
 }

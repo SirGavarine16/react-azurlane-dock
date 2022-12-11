@@ -1,6 +1,7 @@
 import { FC, useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Grid } from '@mui/material';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import confetti from "canvas-confetti";
 
 import { UIContext } from '../contexts';
