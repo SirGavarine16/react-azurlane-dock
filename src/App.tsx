@@ -1,13 +1,29 @@
+import { useContext } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
-function App() {
+import { UIContext } from "./contexts";
+import { DarkTheme, LightTheme } from "./themes";
+import { MainLayout } from "./layouts";
+import { FavoriteShipgirls, Home, NotFound, Shipgirl } from "./pages";
+
+const App = () => {
+  const { theme } = useContext(UIContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          React Azur Lane Dock
-        </p>
-      </header>
-    </div>
+    <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path='shipgirl/:name' element={<Shipgirl />} />
+            <Route path='/favorites' element={<FavoriteShipgirls />} />
+            <Route path='*' element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
