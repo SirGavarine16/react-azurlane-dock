@@ -22,9 +22,16 @@ const Shipgirl: FC<Props> = () => {
     useEffect(() => {
         const getShipgirlData = async () => {
             startLoading();
-            const data = await getShipgirl(name);
-            setShipgirlData(data.shipgirl);
-            setFavorite(existsInFavorites(data.shipgirl.id))
+            try {
+                const data = await getShipgirl(name);
+                setShipgirlData(data.shipgirl);
+                setFavorite(existsInFavorites(data.shipgirl.id))
+            } catch (err) {
+                console.log(err);
+                const { shipgirl } = await getShipgirl(name);
+                setShipgirlData(shipgirl);
+                setFavorite(existsInFavorites(shipgirl.id))
+            }
             finishLoading();
         }
 
