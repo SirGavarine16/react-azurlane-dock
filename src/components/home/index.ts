@@ -1,4 +1,3 @@
-export { default as EmptyContent } from './EmptyContent';
 export { default as NationalitySelect } from './NationalitySelect';
 export { default as RaritySelect } from './RaritySelect';
 export { default as HullTypeSelect } from './HullTypeSelect';

@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { Box, Button, ButtonGroup, Card, Divider, Grid, Skeleton, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, Card, CircularProgress, Divider, Grid, Skeleton, Typography } from '@mui/material';
 
 import { ShipgirlPageData } from '../../constants';
 
@@ -9,6 +9,7 @@ interface Props {
 
 const SkinsCard: FC<Props> = ({ skins }) => {
     const [skinIndex, setSkinIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     return (
         <Box component={Card} padding='1rem' sx={{ width: '100%', minHeight: '100%' }}>
@@ -23,15 +24,26 @@ const SkinsCard: FC<Props> = ({ skins }) => {
                     <Box width='100%' height='36.5rem' position='relative' marginY='0.5rem'>
                         {
                             skins
-                                ? <img
-                                    src={skins[skinIndex].bg ? skins[skinIndex].bg : skins[skinIndex].image}
-                                    alt={skins[skinIndex].name}
-                                    style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'contain'
-                                    }}
-                                />
+                                ? <>
+                                    <img
+                                        src={skins[skinIndex].bg ? skins[skinIndex].bg : skins[skinIndex].image}
+                                        alt={skins[skinIndex].name}
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'contain',
+                                            visibility: loading ? 'hidden' : undefined
+                                        }}
+                                        onLoad={() => setLoading(false)}
+                                    />
+                                    {
+                                        loading
+                                            ? <Box position='absolute' top={0} left={0} width='100%' height='100%' display='flex' justifyContent='center' alignItems='center'>
+                                                <CircularProgress color="info" size='3.5rem' />
+                                            </Box>
+                                            : null
+                                    }
+                                </>
                                 : <Skeleton
                                     variant='rounded'
                                     width='50%'
@@ -53,7 +65,12 @@ const SkinsCard: FC<Props> = ({ skins }) => {
                                                 skins.map((skin, _index) =>
                                                     <Button
                                                         key={`skin-${_index}`}
-                                                        onClick={() => setSkinIndex(_index)}
+                                                        onClick={() => {
+                                                            if (skinIndex !== _index) {
+                                                                setSkinIndex(_index);
+                                                                setLoading(true);
+                                                            }
+                                                        }}
                                                         variant={skinIndex === _index ? 'contained' : 'outlined'}
                                                     >
                                                         {skin.name}

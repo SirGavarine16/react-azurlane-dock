@@ -5,7 +5,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { UIContext } from "./contexts";
 import { DarkTheme, LightTheme } from "./themes";
 import { MainLayout } from "./layouts";
-import { Home, NotFound, Shipgirl } from "./pages";
+import { FavoriteShipgirls, Home, NotFound, Shipgirl } from "./pages";
 
 const App = () => {
   const { theme } = useContext(UIContext);
@@ -18,6 +18,7 @@ const App = () => {
           <Route path='/' element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path='shipgirl/:name' element={<Shipgirl />} />
+            <Route path='/favorites' element={<FavoriteShipgirls />} />
             <Route path='*' element={<NotFound />} />
           </Route>
         </Routes>
