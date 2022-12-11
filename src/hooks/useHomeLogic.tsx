@@ -64,7 +64,12 @@ const useHomeLogic = () => {
         const getShipgirls = async () => {
             startLoading();
             const data = await getAllShipgirls();
-            setShipgirls(data.shipgirls);
+            if (data.shipgirls.length === 0) {
+                const { shipgirls } = await getAllShipgirls();
+                setShipgirls(shipgirls);
+            } else {
+                setShipgirls(data.shipgirls);
+            }
             finishLoading();
         }
 
