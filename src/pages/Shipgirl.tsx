@@ -28,9 +28,6 @@ const Shipgirl: FC<Props> = () => {
                 setFavorite(existsInFavorites(data.shipgirl.id))
             } catch (err) {
                 console.log(err);
-                const { shipgirl } = await getShipgirl(name);
-                setShipgirlData(shipgirl);
-                setFavorite(existsInFavorites(shipgirl.id))
             }
             finishLoading();
         }
